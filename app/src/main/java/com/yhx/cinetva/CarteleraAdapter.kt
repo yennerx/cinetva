@@ -1,37 +1,46 @@
 package com.yhx.cinetva
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import com.yhx.cinetva.databinding.ItemCarteleraBinding
+import kotlinx.android.synthetic.main.item_cartelera.view.*
 
-class CarteleraAdapter (val dataPelicula:List<DataPelicula>):RecyclerView.Adapter<CarteleraAdapter.CarteleraHolder>(){
+class CarteleraAdapter (private val dataPelicula:List<DataPelicula>, private var contexto: Context):RecyclerView.Adapter<CarteleraAdapter.CarteleraHolder>(){
 
-    class CarteleraHolder(val vista: View):RecyclerView.ViewHolder(vista){
-        //binding a el layout item_cartelera.xml
-        val binding = ItemCarteleraBinding.bind(vista)
 
-        fun render(dataPelicula: DataPelicula){
-            binding.tvTitulo.text = dataPelicula.titulo
-            binding.tvSinopsis.text = dataPelicula.sinopsis
-            binding.tvClasificacion.text = dataPelicula.clasificacion
-            Picasso.get().load(dataPelicula.poster).into(binding.ivPoster)
+    class CarteleraHolder(private var vista: View, private var contexto: Context):RecyclerView.ViewHolder(vista){
 
-            vista.setOnClickListener{Toast.makeText(vista.context,"Proceder a película: ${dataPelicula.titulo}",Toast.LENGTH_SHORT).show()}
+        fun bind(dataPelicula: DataPelicula){
+            vista.tvTitulo.text = dataPelicula.titulo
+            vista.tvSinopsis.text = dataPelicula.sinopsis
+            vista.tvClasificacion.text = "Clasificación: ${dataPelicula.clasificacion}"
+            Picasso.get().load(dataPelicula.poster).into(vista.ivPoster)
+
+            vista.ivPoster.setOnClickListener{
+                //Toast.makeText(vista.context,"Proceder a película: ${dataPelicula.titulo}",Toast.LENGTH_SHORT).show()
+                contexto.startActivity(Intent(contexto,PeliculaActivity::class.java).putExtra("pel",dataPelicula))
+            }
+
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarteleraAdapter.CarteleraHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        return CarteleraAdapter.CarteleraHolder(layoutInflater.inflate(R.layout.item_cartelera,parent,false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarteleraHolder {
+        return  CarteleraHolder(
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.item_cartelera,
+                parent,
+                false
+            ), contexto
         )
     }
 
     override fun onBindViewHolder(holder: CarteleraHolder, position: Int) {
-        holder.render(dataPelicula[position])
+        holder.bind(dataPelicula[position])
     }
 
     override fun getItemCount(): Int {
