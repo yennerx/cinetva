@@ -31,7 +31,7 @@ class SalaActivity : AppCompatActivity() {
         tvDisponibles.setText("Disponibles: ${salasPrueba().get(funcion.sala-1).capacidad - salasPrueba().get(funcion.sala-1).ocupados}")
 
         rvSala.layoutManager = GridLayoutManager(this,4)
-        rvSala.adapter = SalaAdapter(salasPrueba(), this)
+        rvSala.adapter = SalaAdapter(salasPrueba(), this, salasPrueba().get(funcion.sala -1).capacidad)
 
         title = "Seleccione Asientos"
     }

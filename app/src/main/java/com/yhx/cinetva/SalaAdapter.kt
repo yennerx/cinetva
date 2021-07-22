@@ -6,26 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
 import android.widget.Toast
+import android.widget.ToggleButton
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_sala.view.*
 import kotlinx.android.synthetic.main.item_sala.view.*
 
-class SalaAdapter(private val dataSala: List<DataSala>, private val contexto: Context):RecyclerView.Adapter<SalaAdapter.SalaHolder>() {
+class SalaAdapter(private val dataSala: List<DataSala>, private val contexto: Context, private val capacidad: Int):RecyclerView.Adapter<SalaAdapter.SalaHolder>() {
+
+    private val asientos = (1).rangeTo(capacidad).toList()
 
     class SalaHolder(private var vista: View, private var contexto: Context): RecyclerView.ViewHolder(vista){
 
-        fun bind(dataSala : DataSala){
-            var noAsiento: Int = 0
-            vista.tbAsiento.textOn = "x"//dataSala.capacidad.toString()
-            vista.tbAsiento.textOff = dataSala.capacidad.toString()
-            //vista.tbAsiento.text = dataSala.no.toString()
-            //vista.tbAsiento.text = (noAsiento+1).toString()
-            vista.tbAsiento.setOnClickListener{
-                Toast.makeText(vista.context,"Asientos Ocupados: ${dataSala.ocupados}", Toast.LENGTH_SHORT).show()
-            }
-
-        }
-
+           val button = vista.findViewById<ToggleButton>(R.id.tbAsiento)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SalaAdapter.SalaHolder {
@@ -39,11 +31,15 @@ class SalaAdapter(private val dataSala: List<DataSala>, private val contexto: Co
     }
 
     override fun onBindViewHolder(holder: SalaHolder, position: Int) {
-        holder.bind(dataSala[position])
+        val item = asientos.get(position)
+        holder.button.textOff = item.toString()
+        holder.button.textOn = "x"
+        holder.button.setOnClickListener{
+            holder.button.textOn.toString()
+        }
     }
 
     override fun getItemCount(): Int {
-        return dataSala.size
-        //return dataSala.get(2).capacidad
+        return asientos.size
     }
 }
