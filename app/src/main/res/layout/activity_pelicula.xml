@@ -22,7 +22,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="Poster de la Película" />
+            app:layout_constraintBottom_toTopOf="@id/tvTituloPeli"
+            android:contentDescription="Poster de la Película"/>
 
         <TextView
             android:id="@+id/tvTituloPeli"
@@ -32,15 +33,17 @@
             app:layout_constraintTop_toBottomOf="@id/ivPosterPeli"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvSinopsisPeli"
             tools:text="Duro de Matar 6"/>
 
         <TextView
             android:id="@+id/tvSinopsisPeli"
             android:layout_width="match_parent"
-            android:layout_height="135dp"
+            android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/tvTituloPeli"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvClasificacionPeli"
             tools:text="Bruce Willis junto a Dani Glover se aventuran nuevamente..."/>
 
         <TextView
@@ -50,9 +53,8 @@
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSinopsisPeli"
             tools:text="Clasificación: C18+"/>
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
