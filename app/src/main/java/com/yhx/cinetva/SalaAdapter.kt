@@ -32,6 +32,7 @@ class SalaAdapter(private val dataSala: List<DataSala>, private val contexto: Co
 
     override fun onBindViewHolder(holder: SalaHolder, position: Int) {
         val item = asientos.get(position)
+        holder.button.text = item.toString()
         holder.button.textOff = item.toString()
         holder.button.textOn = "x"
         holder.button.setOnClickListener{
