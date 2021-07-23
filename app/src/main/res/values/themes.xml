@@ -17,4 +17,13 @@
         <item name="windowNoTitle">true</item>
         <item name="colorControlNormal">@color/white</item>
     </style>
+
+    <style name="Theme.Cinetva.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Cinetva.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Cinetva.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

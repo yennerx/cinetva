@@ -12,8 +12,12 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.squareup.picasso.Picasso
+import com.yhx.cinetva.activities.AgregarpeliActivity
 import com.yhx.cinetva.activities.CarteleraActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.item_cartelera.view.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -23,12 +27,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
      override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        /*
-        title = "Menú"
-        btIraCartelera.setOnClickListener{
-            startActivity(Intent(this, CarteleraActivity::class.java))
-        }
-        */
+
+         btIraCartelera.setOnClickListener{
+             startActivity(Intent(this, CarteleraActivity::class.java))
+         }
+         //ivInicio.setImageBitmap()
+         Picasso.get().load("https://cdn.pixabay.com/photo/2015/04/14/17/08/alien-722415_960_720.jpg").into(ivInicio)
 
          val toolbar: Toolbar = findViewById(R.id.toolbar_main)//revisar
          setSupportActionBar(toolbar)
@@ -48,8 +52,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.nav_item_one -> startActivity(Intent(this, CarteleraActivity::class.java))
-            R.id.nav_item_two -> Toast.makeText(this,"Item 2", Toast.LENGTH_SHORT).show()
-            R.id.nav_item_three -> Toast.makeText(this,"Item 3", Toast.LENGTH_SHORT).show()
+            R.id.nav_item_two -> startActivity(Intent(this, AgregarpeliActivity::class.java))
+            R.id.nav_item_three -> Toast.makeText(this,"Modificar Película", Toast.LENGTH_SHORT).show()
+            R.id.nav_item_four -> Toast.makeText(this,"Agregar Función", Toast.LENGTH_SHORT).show()
+            R.id.nav_item_five -> Toast.makeText(this,"Borrar Función", Toast.LENGTH_SHORT).show()
         }
 
         drawer.closeDrawer(GravityCompat.START)

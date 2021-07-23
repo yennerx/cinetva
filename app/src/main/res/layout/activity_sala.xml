@@ -32,7 +32,8 @@
             android:textSize="40sp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Sala: 1"/>
+            tools:text="Sala: 1"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/tvCategoria"
@@ -69,6 +70,17 @@
             app:layout_constraintStart_toEndOf="@id/tvOcupados"
             app:layout_constraintEnd_toEndOf="parent"/>
 
+        <TextView
+            android:id="@+id/tvPantalla"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvDisponibles"
+            android:text="@string/tvPantalla"
+            android:background="@color/black"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textStyle="bold"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -90,17 +102,22 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clControles"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/clAsientos"
         app:layout_constraintBottom_toBottomOf="parent">
 
+
+
         <Button
             android:id="@+id/btFinalizar"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/btFinalizar"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="Finalizar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             tools:text="Finalizar"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

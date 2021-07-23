@@ -18,7 +18,7 @@ class SalaActivity : AppCompatActivity() {
         val lista = ArrayList<DataSala>()
         lista.add(DataSala(1,20,8,"Estandar",1))
         lista.add(DataSala(2,16,4,"VIP",1))
-        lista.add(DataSala(3,30,20,"3D",1))
+        lista.add(DataSala(3,28,20,"3D",1))
         return lista
     }
 
