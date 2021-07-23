@@ -3,10 +3,10 @@ package com.yhx.cinetva
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
 import androidx.recyclerview.widget.GridLayoutManager
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_pelicula.*
+import com.yhx.cinetva.adapters.SalaAdapter
+import com.yhx.cinetva.data.DataFuncion
+import com.yhx.cinetva.data.DataSala
 import kotlinx.android.synthetic.main.activity_sala.*
 
 class SalaActivity : AppCompatActivity() {

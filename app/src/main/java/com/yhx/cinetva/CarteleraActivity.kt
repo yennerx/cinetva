@@ -3,6 +3,8 @@ package com.yhx.cinetva
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.yhx.cinetva.adapters.CarteleraAdapter
+import com.yhx.cinetva.data.DataPelicula
 import kotlinx.android.synthetic.main.activity_cartelera.*
 
 class CarteleraActivity : AppCompatActivity() {

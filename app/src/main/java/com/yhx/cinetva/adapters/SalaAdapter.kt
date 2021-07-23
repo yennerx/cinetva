@@ -1,15 +1,13 @@
-package com.yhx.cinetva
+package com.yhx.cinetva.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CompoundButton
-import android.widget.Toast
 import android.widget.ToggleButton
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_sala.view.*
-import kotlinx.android.synthetic.main.item_sala.view.*
+import com.yhx.cinetva.R
+import com.yhx.cinetva.data.DataSala
 
 class SalaAdapter(private val dataSala: List<DataSala>, private val contexto: Context, private val capacidad: Int):RecyclerView.Adapter<SalaAdapter.SalaHolder>() {
 
@@ -20,8 +18,8 @@ class SalaAdapter(private val dataSala: List<DataSala>, private val contexto: Co
            val button = vista.findViewById<ToggleButton>(R.id.tbAsiento)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SalaAdapter.SalaHolder {
-        return SalaAdapter.SalaHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SalaHolder {
+        return SalaHolder(
             LayoutInflater.from(parent.context).inflate(
                 R.layout.item_sala,
                 parent,

@@ -1,4 +1,4 @@
-package com.yhx.cinetva
+package com.yhx.cinetva.data
 
 import java.io.Serializable
 

@@ -3,8 +3,10 @@ package com.yhx.cinetva
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.squareup.picasso.Picasso
+import com.yhx.cinetva.adapters.FuncionAdapter
+import com.yhx.cinetva.data.DataFuncion
+import com.yhx.cinetva.data.DataPelicula
 import kotlinx.android.synthetic.main.activity_pelicula.*
 
 class PeliculaActivity : AppCompatActivity(){

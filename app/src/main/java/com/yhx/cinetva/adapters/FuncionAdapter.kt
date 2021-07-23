@@ -1,4 +1,4 @@
-package com.yhx.cinetva
+package com.yhx.cinetva.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -7,6 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.yhx.cinetva.R
+import com.yhx.cinetva.SalaActivity
+import com.yhx.cinetva.data.DataFuncion
 import kotlinx.android.synthetic.main.item_funcion.view.*
 
 class FuncionAdapter(private val dataFuncion: List<DataFuncion>, private val contexto: Context): RecyclerView.Adapter<FuncionAdapter.FuncionHolder>() {
@@ -17,7 +20,7 @@ class FuncionAdapter(private val dataFuncion: List<DataFuncion>, private val con
             vista.btFuncion.text = dataFuncion.hora
             vista.btFuncion.setOnClickListener{
                 Toast.makeText(vista.context,"ir a Sala: ${dataFuncion.sala}",Toast.LENGTH_SHORT).show()
-                contexto.startActivity(Intent(contexto,SalaActivity::class.java).putExtra("pel",dataFuncion))
+                contexto.startActivity(Intent(contexto, SalaActivity::class.java).putExtra("pel",dataFuncion))
             }
         }
     }
