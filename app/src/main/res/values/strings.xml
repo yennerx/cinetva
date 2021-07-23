@@ -19,8 +19,10 @@
     <string name="item5">Modificar función</string>
     <string name="titulo1">Cartelera</string>
     <string name="titulo2">Funciones</string>
+    <string name="tvEstreno">Estreno de Hoy!!!</string>
     <string name="btCartelera">Ir a Cartelera</string>
     <string name="title_activity_agregarpeli">AgregarpeliActivity</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
