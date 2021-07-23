@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
+import com.yhx.cinetva.AppBarSecondary
 import com.yhx.cinetva.MainActivity
 import com.yhx.cinetva.R
 import com.yhx.cinetva.adapters.SalaAdapter
@@ -40,6 +41,7 @@ class SalaActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
-        title = "Seleccione Asientos"
+        var titulo = "Seleccione Asientos"
+        AppBarSecondary().show(this,titulo,false )
     }
 }

@@ -3,6 +3,7 @@ package com.yhx.cinetva.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.yhx.cinetva.AppBarSecondary
 import com.yhx.cinetva.R
 import com.yhx.cinetva.adapters.CarteleraAdapter
 import com.yhx.cinetva.data.DataPelicula
@@ -32,6 +33,7 @@ class CarteleraActivity : AppCompatActivity() {
         rvCartelera.layoutManager = LinearLayoutManager(this)
         rvCartelera.adapter = CarteleraAdapter(peliculasPrueba(), this)
 
-        title = "Cartelera para hoy"
+        var titulo = "Cartelera para hoy"
+        AppBarSecondary().show(this,titulo,true )
     }
 }

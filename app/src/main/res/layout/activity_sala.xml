@@ -8,10 +8,20 @@
     tools:context=".activities.SalaActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clInfoSala"
+        android:id="@+id/clAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/clInfoSala">
+        <include
+            layout="@layout/app_bar_secondary"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clInfoSala"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/clAppBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -65,7 +75,7 @@
         android:id="@+id/clAsientos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:padding="50dp"
+        android:padding="30dp"
         app:layout_constraintTop_toBottomOf="@id/clInfoSala"
         app:layout_constraintBottom_toTopOf="@id/clControles">
 

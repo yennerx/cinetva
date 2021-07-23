@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.squareup.picasso.Picasso
+import com.yhx.cinetva.AppBarSecondary
 import com.yhx.cinetva.R
 import com.yhx.cinetva.adapters.FuncionAdapter
 import com.yhx.cinetva.data.DataFuncion
@@ -37,6 +38,7 @@ class PeliculaActivity : AppCompatActivity(){
         rvFunciones.layoutManager = GridLayoutManager(this,3)
         rvFunciones.adapter = FuncionAdapter(funcionesPrueba(), this)
 
-        title = "Funciones para: ${pelicula.titulo}"
+        var titulo = "Funciones para: ${pelicula.titulo}"
+        AppBarSecondary().show(this,titulo,true )
     }
 }

@@ -11,9 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cinetva">
-        <activity android:name=".activities.CarteleraActivity"></activity>
-        <activity android:name=".activities.SalaActivity" />
-        <activity android:name=".activities.PeliculaActivity" />
+        <activity android:name=".activities.CarteleraActivity"
+            android:parentActivityName=".MainActivity"/>
+
+        <activity android:name=".activities.PeliculaActivity"
+            android:parentActivityName=".activities.CarteleraActivity"/>
+
+        <activity android:name=".activities.SalaActivity"
+            android:parentActivityName=".activities.PeliculaActivity"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
