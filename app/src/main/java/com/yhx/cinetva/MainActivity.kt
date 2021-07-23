@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //title = "Cartelera para hoy"
+        title = "Menú"
         btIraCartelera.setOnClickListener{
             startActivity(Intent(this, CarteleraActivity::class.java))
         }
