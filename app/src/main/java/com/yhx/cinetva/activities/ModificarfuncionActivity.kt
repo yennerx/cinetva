@@ -1,17 +1,16 @@
 package com.yhx.cinetva.activities
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import com.yhx.cinetva.AppBarSecondary
 import com.yhx.cinetva.R
 
-class AgregarpeliActivity : AppCompatActivity() {
+class ModificarfuncionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_agregarpeli)
+        setContentView(R.layout.activity_modificarfuncion)
 
-        var titulo = "Agregar Película"
+        var titulo = "Modificar Función"
         AppBarSecondary().show(this,titulo,true )
-
-        }
     }
+}
