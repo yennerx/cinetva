@@ -1,9 +1,11 @@
-package com.yhx.cinetva
+package com.yhx.cinetva.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
+import com.yhx.cinetva.MainActivity
+import com.yhx.cinetva.R
 import com.yhx.cinetva.adapters.SalaAdapter
 import com.yhx.cinetva.data.DataFuncion
 import com.yhx.cinetva.data.DataSala
@@ -35,7 +37,7 @@ class SalaActivity : AppCompatActivity() {
         rvSala.adapter = SalaAdapter(salasPrueba(), this, salasPrueba().get(funcion.sala -1).capacidad)
 
         btFinalizar.setOnClickListener{
-            startActivity(Intent(this,MainActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         title = "Seleccione Asientos"

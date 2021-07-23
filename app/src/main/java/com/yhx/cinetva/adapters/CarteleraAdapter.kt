@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import com.yhx.cinetva.PeliculaActivity
+import com.yhx.cinetva.activities.PeliculaActivity
 import com.yhx.cinetva.R
 import com.yhx.cinetva.data.DataPelicula
 import kotlinx.android.synthetic.main.item_cartelera.view.*

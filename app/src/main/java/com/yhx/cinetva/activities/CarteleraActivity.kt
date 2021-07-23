@@ -1,8 +1,9 @@
-package com.yhx.cinetva
+package com.yhx.cinetva.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.yhx.cinetva.R
 import com.yhx.cinetva.adapters.CarteleraAdapter
 import com.yhx.cinetva.data.DataPelicula
 import kotlinx.android.synthetic.main.activity_cartelera.*

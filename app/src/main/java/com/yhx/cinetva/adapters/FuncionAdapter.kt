@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.yhx.cinetva.R
-import com.yhx.cinetva.SalaActivity
+import com.yhx.cinetva.activities.SalaActivity
 import com.yhx.cinetva.data.DataFuncion
 import kotlinx.android.synthetic.main.item_funcion.view.*
 

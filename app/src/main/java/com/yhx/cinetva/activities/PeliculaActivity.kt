@@ -1,9 +1,10 @@
-package com.yhx.cinetva
+package com.yhx.cinetva.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.squareup.picasso.Picasso
+import com.yhx.cinetva.R
 import com.yhx.cinetva.adapters.FuncionAdapter
 import com.yhx.cinetva.data.DataFuncion
 import com.yhx.cinetva.data.DataPelicula
