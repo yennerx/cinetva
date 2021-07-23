@@ -1,5 +1,6 @@
 package com.yhx.cinetva
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
@@ -32,6 +33,10 @@ class SalaActivity : AppCompatActivity() {
 
         rvSala.layoutManager = GridLayoutManager(this,4)
         rvSala.adapter = SalaAdapter(salasPrueba(), this, salasPrueba().get(funcion.sala -1).capacidad)
+
+        btFinalizar.setOnClickListener{
+            startActivity(Intent(this,MainActivity::class.java))
+        }
 
         title = "Seleccione Asientos"
     }
