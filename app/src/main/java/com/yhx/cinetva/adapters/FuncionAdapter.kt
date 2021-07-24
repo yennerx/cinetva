@@ -19,7 +19,7 @@ class FuncionAdapter(private val dataFuncion: List<DataFuncion>, private val con
         fun bind(dataFuncion: DataFuncion){
             vista.btFuncion.text = dataFuncion.hora
             vista.btFuncion.setOnClickListener{
-                Toast.makeText(vista.context,"ir a Sala: ${dataFuncion.sala}",Toast.LENGTH_SHORT).show()
+                //Toast.makeText(vista.context,"ir a Sala: ${dataFuncion.sala}",Toast.LENGTH_SHORT).show()
                 contexto.startActivity(Intent(contexto, SalaActivity::class.java).putExtra("pel",dataFuncion))
             }
         }
