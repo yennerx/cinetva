@@ -52,6 +52,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_item_three -> startActivity(Intent(this, ModificarpeliActivity::class.java))
             R.id.nav_item_four -> startActivity(Intent(this, AgregarfuncionActivity::class.java))
             R.id.nav_item_five -> startActivity(Intent(this, ModificarfuncionActivity::class.java))
+            R.id.nav_item_six -> startActivity(Intent(this, AgregarsalaActivity::class.java))
+            R.id.nav_item_seven -> startActivity(Intent(this, ModificarsalaActivity::class.java))
+            R.id.nav_item_eight -> finish()
         }
 
         drawer.closeDrawer(GravityCompat.START)

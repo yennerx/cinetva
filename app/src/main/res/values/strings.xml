@@ -17,8 +17,12 @@
     <string name="item3">Modificar Película</string>
     <string name="item4">Agregar función</string>
     <string name="item5">Modificar función</string>
+    <string name="item6">Agregar Sala</string>
+    <string name="item7">Modificar Sala</string>
+    <string name="item0">Salir</string>
     <string name="titulo1">Cartelera</string>
     <string name="titulo2">Funciones</string>
+    <string name="titulo3">Salas</string>
     <string name="tvEstreno">Estreno de Hoy!!!</string>
     <string name="btCartelera">Ir a Cartelera</string>
     <string name="title_activity_agregarpeli">AgregarpeliActivity</string>

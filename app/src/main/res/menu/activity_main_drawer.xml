@@ -27,4 +27,19 @@
                 android:title="@string/item5"/>
         </menu>
     </item>
+
+    <item android:title="@string/titulo3">
+        <menu>
+            <item android:id="@+id/nav_item_six"
+                android:icon="@drawable/abc_vector_test"
+                android:title="@string/item6"/>
+            <item android:id="@+id/nav_item_seven"
+                android:icon="@drawable/abc_vector_test"
+                android:title="@string/item7"/>
+        </menu>
+    </item>
+
+    <item android:id="@+id/nav_item_eight"
+        android:icon="@drawable/abc_vector_test"
+        android:title="@string/item0"/>
 </menu>

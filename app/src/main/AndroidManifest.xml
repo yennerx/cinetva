@@ -11,8 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cinetva">
-        <activity android:name=".activities.ModificarfuncionActivity"
-            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".activities.ModificarsalaActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".activities.AgregarsalaActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".activities.ModificarfuncionActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".activities.AgregarfuncionActivity"
             android:parentActivityName=".MainActivity" />
