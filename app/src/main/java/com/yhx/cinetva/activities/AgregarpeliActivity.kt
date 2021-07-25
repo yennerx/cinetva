@@ -1,10 +1,14 @@
 package com.yhx.cinetva.activities
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import com.yhx.cinetva.AppBarSecondary
 import com.yhx.cinetva.R
+import kotlinx.android.synthetic.main.activity_agregarpeli.*
 
 class AgregarpeliActivity : AppCompatActivity() {
 
@@ -17,5 +21,54 @@ class AgregarpeliActivity : AppCompatActivity() {
         var titulo = "Agregar Película"
         AppBarSecondary().show(this,titulo,true )
 
+        btPeliAgregar.setOnClickListener {
+            peliAgregar(etPeliId.text.toString(),
+                etPeliNombre.text.toString(),
+                etPeliSinopsis.text.toString(),
+                etPeliClasificacion.text.toString(),
+                etPeliPoster.text.toString())
+
+            etPeliId.setText("")
+            etPeliNombre.setText("")
+            etPeliSinopsis.setText("")
+            etPeliClasificacion.setText("")
+            etPeliPoster.setText("")
+            //etPeliId.isEnabled = false
         }
+
     }
+
+    fun peliAgregar(peliId: String, peliNombre:String, peliSinopsis:String, peliClasificacion:String, peliUrlImagen:String){
+
+        if(peliId != ""){
+            db.collection("peliculas").document(peliId).set(
+                hashMapOf("nombre" to peliNombre,
+                    "sinopsis" to peliSinopsis,
+                    "clasificacion" to peliClasificacion,
+                    "urlimagen" to peliUrlImagen)
+            )
+        }else{
+            Toast.makeText(this,"Por favor ingresar un ID",Toast.LENGTH_SHORT).show()
+
+            val peliculas = db.collection("peliculas")
+            val pelisList = mutableListOf<String>()
+
+
+            peliculas.get().addOnSuccessListener { result ->
+                for(document in result){
+                    System.out.println("${document.id} => ${document.data.get("nombre")} -------${result}")
+                    for(item in document.data){
+                        pelisList.add(item.toString())
+                        System.out.println("${item}")
+                    }
+                }
+            }
+
+
+
+
+
+        }
+
+    }
+}
