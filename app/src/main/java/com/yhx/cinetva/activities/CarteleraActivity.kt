@@ -39,15 +39,15 @@ class CarteleraActivity : AppCompatActivity() {
         }
 
         Toast.makeText(this,"Película agregada: ${prueba}",Toast.LENGTH_SHORT).show()
-        //lista.add(DataPelicula(1,"Shrek","Un ogro se dispone a salvar a una princesa a cambio...","A","https://cdn.pixabay.com/photo/2015/04/14/17/08/alien-722415_960_720.jpg"))
 
         if (lista.isEmpty()){
+            Toast.makeText(this,"No se fue posible cargar peliculas de firebase",Toast.LENGTH_SHORT).show()
             lista.add(DataPelicula(6,"Raya y el último dragón","El nuevo clásico animado de Disney, el primero desde 'Frozen 2'. Dirigida por Paul Briggs y Dean Wellins", "A", "https://i.blogs.es/28ca41/raya/1366_2000.jpeg"))
             lista.add(DataPelicula(7,"The Many Saints of Newark","Precuela de 'Los Soprano', una de las series de televisión más aclamadas de todos los tiempos.", "C", "https://i.blogs.es/a8ffff/newark/1366_2000.jpeg"))
             lista.add(DataPelicula(8,"Bob's Burgers: The Movie","Salto a la gran pantalla de la querida serie animada que ya va por su undécima temporada.", "C", "https://i.blogs.es/21b473/burgers/1366_2000.jpeg"))
             lista.add(DataPelicula(9,"Last Night in Soho","La nueva película de Edgar Wright es un thriller sobre una mujer que conoce a su ídolo en los años 60 en Londres, a donde llega de forma misteriosa.", "C", "https://i.blogs.es/f9c0f2/soho/1366_2000.jpeg"))
             lista.add(DataPelicula(10,"Godzilla vs. Kong","Adam Wingard dirige el enfrentamiento entre dos de los monstruos cinematográficos más míticos de todos los tiempos. ", "A", "https://i.blogs.es/9228a8/godzilla-kong/1366_2000.jpeg"))
-            }
+        }
 
         return lista
     }

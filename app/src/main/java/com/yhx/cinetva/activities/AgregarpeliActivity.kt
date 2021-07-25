@@ -7,6 +7,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.yhx.cinetva.AppBarSecondary
 import com.yhx.cinetva.R
 import kotlinx.android.synthetic.main.activity_agregarpeli.*
+import kotlinx.android.synthetic.main.activity_modificarpeli.*
 
 class AgregarpeliActivity : AppCompatActivity() {
 
@@ -20,23 +21,17 @@ class AgregarpeliActivity : AppCompatActivity() {
         AppBarSecondary().show(this,titulo,true )
 
         btPeliAgregar.setOnClickListener {
-            peliAgregar(etPeliId.text.toString(),
-                etPeliNombre.text.toString(),
-                etPeliSinopsis.text.toString(),
-                etPeliClasificacion.text.toString(),
-                etPeliPoster.text.toString())
-
-            etPeliId.setText("")
-            etPeliNombre.setText("")
-            etPeliSinopsis.setText("")
-            etPeliClasificacion.setText("")
-            etPeliPoster.setText("")
-            //etPeliId.isEnabled = false
+            peliAgregar()
         }
 
     }
 
-    fun peliAgregar(peliId: String, peliNombre:String, peliSinopsis:String, peliClasificacion:String, peliUrlImagen:String){
+    fun peliAgregar(){
+        val peliId: String = etPeliId.text.toString()
+        val peliNombre:String = etPeliNombre.text.toString()
+        val peliSinopsis:String = etPeliSinopsis.text.toString()
+        val peliClasificacion:String = etPeliClasificacion.text.toString()
+        val peliUrlImagen:String = etPeliPoster.text.toString()
 
         if(peliId != ""){
             db.collection("peliculas").document(peliId).set(
@@ -45,6 +40,12 @@ class AgregarpeliActivity : AppCompatActivity() {
                     "clasificacion" to peliClasificacion,
                     "urlimagen" to peliUrlImagen)
             )
+
+            etPeliId.setText("")
+            etPeliNombre.setText("")
+            etPeliSinopsis.setText("")
+            etPeliClasificacion.setText("")
+            etPeliPoster.setText("")
         }else{
             Toast.makeText(this,"Por favor ingresar un ID",Toast.LENGTH_SHORT).show()
         }
