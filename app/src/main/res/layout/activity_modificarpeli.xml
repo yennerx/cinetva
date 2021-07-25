@@ -25,7 +25,78 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <EditText
+            android:id="@+id/etPeliId2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="ID"/>
 
+        <EditText
+            android:id="@+id/etPeliNombre2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/etPeliId2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Nombre de la película"/>
+
+        <EditText
+            android:id="@+id/etPeliSinopsis2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/etPeliNombre2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Sinopsis de la película"/>
+
+        <EditText
+            android:id="@+id/etPeliClasificacion2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Clasificación de la película"
+            app:layout_constraintTop_toBottomOf="@id/etPeliSinopsis2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <EditText
+            android:id="@+id/etPeliPoster2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/etPeliClasificacion2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="URL del poster de la película"/>
+
+        <Button
+            android:id="@+id/btPeliBuscar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar"
+            app:layout_constraintTop_toBottomOf="@id/etPeliPoster2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btPeliModificar2"/>
+
+        <Button
+            android:id="@+id/btPeliModificar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modificar"
+            app:layout_constraintTop_toBottomOf="@id/etPeliPoster2"
+            app:layout_constraintStart_toEndOf="@id/btPeliBuscar2"
+            app:layout_constraintEnd_toStartOf="@id/btPeliEliminar2"/>
+
+        <Button
+            android:id="@+id/btPeliEliminar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eliminar"
+            app:layout_constraintTop_toBottomOf="@id/etPeliPoster2"
+            app:layout_constraintStart_toEndOf="@id/btPeliModificar2"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

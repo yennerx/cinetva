@@ -58,7 +58,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'//yhx. para el menú de navegacion secundario
     implementation 'com.google.firebase:firebase-firestore:21.6.0'//yhx. para usar la base de datos de firebase
     implementation platform('com.google.firebase:firebase-bom:28.3.0') // yhx. para usar firebase
-    implementation 'com.google.firebase:firebase-analytics-ktx' //yhx. para usar firebase
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'//yhx. para usar firebase
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

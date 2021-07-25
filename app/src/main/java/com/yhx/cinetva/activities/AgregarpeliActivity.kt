@@ -1,8 +1,6 @@
 package com.yhx.cinetva.activities
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
@@ -49,25 +47,6 @@ class AgregarpeliActivity : AppCompatActivity() {
             )
         }else{
             Toast.makeText(this,"Por favor ingresar un ID",Toast.LENGTH_SHORT).show()
-
-            val peliculas = db.collection("peliculas")
-            val pelisList = mutableListOf<String>()
-
-
-            peliculas.get().addOnSuccessListener { result ->
-                for(document in result){
-                    System.out.println("${document.id} => ${document.data.get("nombre")} -------${result}")
-                    for(item in document.data){
-                        pelisList.add(item.toString())
-                        System.out.println("${item}")
-                    }
-                }
-            }
-
-
-
-
-
         }
 
     }
