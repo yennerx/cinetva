@@ -72,5 +72,11 @@ class ModificarpeliActivity : AppCompatActivity() {
     fun peliEliminar(){
         val peliId: String = etPeliId2.text.toString()
         db.collection("peliculas").document(peliId).delete()
+
+        etPeliId2.setText("")
+        etPeliNombre2.setText("")
+        etPeliSinopsis2.setText("")
+        etPeliClasificacion2.setText("")
+        etPeliPoster2.setText("")
     }
 }

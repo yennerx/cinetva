@@ -35,10 +35,10 @@ class CarteleraActivity : AppCompatActivity() {
                 //Toast.makeText(this,"Película agregada: ${prueba}",Toast.LENGTH_SHORT).show()
             }
             prueba+=result.size()
-            Toast.makeText(this,"Cantidad de Peliculas: ${result.size()} -prueba:${prueba}",Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this,"Cantidad de Peliculas: ${result.size()} -prueba:${prueba}",Toast.LENGTH_SHORT).show()
         }
 
-        Toast.makeText(this,"Película agregada: ${prueba}",Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this,"Película agregada: ${prueba}",Toast.LENGTH_SHORT).show()
 
         if (lista.isEmpty()){
             Toast.makeText(this,"No se fue posible cargar peliculas de firebase",Toast.LENGTH_SHORT).show()
@@ -51,8 +51,6 @@ class CarteleraActivity : AppCompatActivity() {
 
         return lista
     }
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
