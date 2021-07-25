@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "125443864960",
+    "project_id": "cinetva-22b22",
+    "storage_bucket": "cinetva-22b22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125443864960:android:0bf19ed3a40b396ee5a965",
+        "android_client_info": {
+          "package_name": "com.yhx.cinetva"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125443864960-q9e1pjvco7vu68er1oos6leav3vugd3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcptCMwuE35AXuzJ3C-2HnCYNYkAXCmxE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125443864960-q9e1pjvco7vu68er1oos6leav3vugd3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
