@@ -27,6 +27,61 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <EditText
+                android:id="@+id/etSalaNo2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="No. de Sala (ID)"/>
+
+            <EditText
+                android:id="@+id/etSalaCapacidad2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                app:layout_constraintTop_toBottomOf="@id/etSalaNo2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="Capacidad de la Sala"/>
+
+            <EditText
+                android:id="@+id/etSalaCategoria2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/etSalaCapacidad2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="Categoría de la Sala"/>
+
+            <Button
+                android:id="@+id/btSalaBuscar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agregar"
+                app:layout_constraintTop_toBottomOf="@id/etSalaCategoria2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btSalaModificar"/>
+
+            <Button
+                android:id="@+id/btSalaModificar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Modificar"
+                app:layout_constraintTop_toBottomOf="@id/etSalaCategoria2"
+                app:layout_constraintStart_toEndOf="@id/btSalaBuscar"
+                app:layout_constraintEnd_toStartOf="@id/btSalaEliminar"/>
+
+            <Button
+                android:id="@+id/btSalaEliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eliminar"
+                app:layout_constraintTop_toBottomOf="@id/etSalaCategoria2"
+                app:layout_constraintStart_toEndOf="@id/btSalaModificar"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
