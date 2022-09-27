@@ -59,6 +59,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:21.6.0'//yhx. para usar la base de datos de firebase
     implementation platform('com.google.firebase:firebase-bom:28.3.0') // yhx. para usar firebase
     implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'//yhx. para usar firebase
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

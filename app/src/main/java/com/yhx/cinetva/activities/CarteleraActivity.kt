@@ -1,10 +1,14 @@
 package com.yhx.cinetva.activities
 
+import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.yhx.cinetva.AppBarSecondary
 import com.yhx.cinetva.R
 import com.yhx.cinetva.adapters.CarteleraAdapter
@@ -13,30 +17,51 @@ import kotlinx.android.synthetic.main.activity_cartelera.*
 
 class CarteleraActivity : AppCompatActivity() {
 
-    private val db = FirebaseFirestore.getInstance()
+    //private val db = FirebaseFirestore.getInstance()
+
 
     private fun peliculasPrueba():ArrayList<DataPelicula>{
 
-        val peliculas = db.collection("peliculas")
+        //val peliculas = db.collection("peliculas")
+        val db = Firebase.firestore
         val lista = ArrayList<DataPelicula>()
-        var prueba = "NA"
+        //var prueba = "NA"
 
-        peliculas.get().addOnSuccessListener { result ->
-            for(document in result){
-                //System.out.println("${document.id} => ${document.data.get("nombre")} -------${result}")
-                lista.add(DataPelicula(document.id.toInt(),document.data.get("nombre").toString(),document.data.get("sinopsis").toString(),document.data.get("clasificacion").toString(),document.data.get("urlimagen").toString()))
-                System.out.println(document.id)
-                System.out.println(document.data.get("nombre").toString())
-                System.out.println(document.data.get("sinopsis").toString())
-                System.out.println(document.data.get("clasificacion").toString())
-                System.out.println(document.data.get("urlimagen").toString())
+        /*
+           peliculas.get().addOnSuccessListener { result ->
+               for(document in result){
+                   //System.out.println("${document.id} => ${document.data.get("nombre")} -------${result}")
+                   lista.add(DataPelicula(document.id.toInt(),document.data.get("nombre").toString(),document.data.get("sinopsis").toString(),document.data.get("clasificacion").toString(),document.data.get("urlimagen").toString()))
+                   System.out.println(document.id)
+                   System.out.println(document.data.get("nombre").toString())
+                   System.out.println(document.data.get("sinopsis").toString())
+                   System.out.println(document.data.get("clasificacion").toString())
+                   System.out.println(document.data.get("urlimagen").toString())
 
-                prueba += ","+document.data.get("nombre").toString()
-                //Toast.makeText(this,"Película agregada: ${prueba}",Toast.LENGTH_SHORT).show()
+                   prueba += ","+document.data.get("nombre").toString()
+                   //Toast.makeText(this,"Película agregada: ${prueba}",Toast.LENGTH_SHORT).show()
+               }
+               prueba+=result.size()
+               //Toast.makeText(this,"Cantidad de Peliculas: ${result.size()} -prueba:${prueba}",Toast.LENGTH_SHORT).show()
+
+
+           }
+           */
+
+        db.collection("peliculas")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d(TAG, "${document.id} => ${document.data}")
+                    Toast.makeText(this, "${document.id} => ${document.data}",Toast.LENGTH_SHORT).show()
+                    //lista.add(DataPelicula(document.id.toInt(),document.data.get("nombre").toString(),document.data.get("sinopsis").toString(),document.data.get("clasificacion").toString(),document.data.get("urlimagen").toString()))
+                    lista.add(DataPelicula(document.data.get("id").toString().toInt(),document.data.get("nombre").toString(),document.data.get("sinopsis").toString(),document.data.get("clasificacion").toString(),document.data.get("urlimagen").toString()))
+                }
             }
-            prueba+=result.size()
-            //Toast.makeText(this,"Cantidad de Peliculas: ${result.size()} -prueba:${prueba}",Toast.LENGTH_SHORT).show()
-        }
+            .addOnFailureListener { exception ->
+                Log.w(TAG, "Error getting documents.", exception)
+                Toast.makeText(this, "Error al leer",Toast.LENGTH_SHORT).show()
+            }
 
         //Toast.makeText(this,"Película agregada: ${prueba}",Toast.LENGTH_SHORT).show()
 
