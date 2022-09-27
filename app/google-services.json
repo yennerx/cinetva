@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "125443864960",
-    "project_id": "cinetva-22b22",
-    "storage_bucket": "cinetva-22b22.appspot.com"
+    "project_number": "482059086163",
+    "project_id": "umg-cine",
+    "storage_bucket": "umg-cine.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:125443864960:android:0bf19ed3a40b396ee5a965",
+        "mobilesdk_app_id": "1:482059086163:android:d66da76d3fe4f3801c19a6",
         "android_client_info": {
           "package_name": "com.yhx.cinetva"
         }
       },
       "oauth_client": [
         {
-          "client_id": "125443864960-q9e1pjvco7vu68er1oos6leav3vugd3f.apps.googleusercontent.com",
+          "client_id": "482059086163-sid5q7gmmsq9uq03ifnrboufekegijlu.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCcptCMwuE35AXuzJ3C-2HnCYNYkAXCmxE"
+          "current_key": "AIzaSyB1ZrR3Uxt7_-Oq5QZ-pYYRJE9Fx3BgDYs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "125443864960-q9e1pjvco7vu68er1oos6leav3vugd3f.apps.googleusercontent.com",
+              "client_id": "482059086163-sid5q7gmmsq9uq03ifnrboufekegijlu.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
