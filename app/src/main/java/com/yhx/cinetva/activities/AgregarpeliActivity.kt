@@ -46,6 +46,8 @@ class AgregarpeliActivity : AppCompatActivity() {
                 "sinopsis" to peliSinopsis,
                 "urlimagen" to peliUrlImagen)
 
+            /*
+            //Agregar peliculas con ID automático
             db.collection("peliculas")
                 .add(pelicula)
                 .addOnSuccessListener { documentReference ->
@@ -56,7 +58,10 @@ class AgregarpeliActivity : AppCompatActivity() {
                     Log.w(TAG, "Error adding document", e)
                     Toast.makeText(this, "Error: ${e}",Toast.LENGTH_SHORT).show()
                 }
+            */
 
+            //Agregar peliculas con ID manual
+            db.collection("peliculas").document(pelicula.getValue("id")).set(pelicula)
 
             etPeliId.setText("")
             etPeliNombre.setText("")

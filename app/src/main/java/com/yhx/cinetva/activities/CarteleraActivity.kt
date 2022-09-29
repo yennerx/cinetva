@@ -25,13 +25,16 @@ class CarteleraActivity : AppCompatActivity() {
         //val peliculas = db.collection("peliculas")
         val db = Firebase.firestore
         val lista = ArrayList<DataPelicula>()
-        //var prueba = "NA"
+        var prueba = "NA"
 
-        /*
-           peliculas.get().addOnSuccessListener { result ->
+
+        db.collection("peliculas")
+            .get()
+            .addOnSuccessListener { result ->
                for(document in result){
                    //System.out.println("${document.id} => ${document.data.get("nombre")} -------${result}")
-                   lista.add(DataPelicula(document.id.toInt(),document.data.get("nombre").toString(),document.data.get("sinopsis").toString(),document.data.get("clasificacion").toString(),document.data.get("urlimagen").toString()))
+                   //lista.add(DataPelicula(document.id.toInt(),document.data.get("nombre").toString(),document.data.get("sinopsis").toString(),document.data.get("clasificacion").toString(),document.data.get("urlimagen").toString()))
+                   lista.add(DataPelicula(document.data.getValue("id").toString().toInt(),document.data.getValue("nombre").toString(),document.data.getValue("sinopsis").toString(),document.data.getValue("clasificacion").toString(),document.data.getValue("urlimagen").toString()))
                    System.out.println(document.id)
                    System.out.println(document.data.get("nombre").toString())
                    System.out.println(document.data.get("sinopsis").toString())
@@ -46,24 +49,39 @@ class CarteleraActivity : AppCompatActivity() {
 
 
            }
-           */
 
+
+        /*
         db.collection("peliculas")
             .get()
             .addOnSuccessListener { result ->
                 for (document in result) {
                     Log.d(TAG, "${document.id} => ${document.data}")
-                    Toast.makeText(this, "${document.id} => ${document.data}",Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "${document.id} => ${document.data}",Toast.LENGTH_SHORT).show()
                     //lista.add(DataPelicula(document.id.toInt(),document.data.get("nombre").toString(),document.data.get("sinopsis").toString(),document.data.get("clasificacion").toString(),document.data.get("urlimagen").toString()))
-                    lista.add(DataPelicula(document.data.get("id").toString().toInt(),document.data.get("nombre").toString(),document.data.get("sinopsis").toString(),document.data.get("clasificacion").toString(),document.data.get("urlimagen").toString()))
+                    //lista.add(DataPelicula(document.data.getValue("id").toString().toInt(),document.data.getValue("nombre").toString(),document.data.getValue("sinopsis").toString(),document.data.getValue("clasificacion").toString(),document.data.getValue("urlimagen").toString()))
+                    lista.add(DataPelicula(6,"Raya y el último dragón","El nuevo clásico animado de Disney, el primero desde 'Frozen 2'. Dirigida por Paul Briggs y Dean Wellins", "A", "https://i.blogs.es/28ca41/raya/1366_2000.jpeg"))
+                    //Toast.makeText(this, "${document.data}",Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, document.data.getValue("nombre").toString(),Toast.LENGTH_SHORT).show()
+
+                    val pel = hashMapOf(
+                        "clasificacion" to document.data.getValue("clasificacion").toString(),
+                        "id" to document.data.getValue("id").toString(),
+                        "nombre" to document.data.getValue("nombre").toString(),
+                        "sinopsis" to document.data.getValue("sinopsis").toString(),
+                        "urlimagen" to document.data.getValue("urlimagen").toString())
+
+                    Toast.makeText(this, pel.toString(),Toast.LENGTH_SHORT).show()
                 }
+
             }
             .addOnFailureListener { exception ->
                 Log.w(TAG, "Error getting documents.", exception)
                 Toast.makeText(this, "Error al leer",Toast.LENGTH_SHORT).show()
             }
+         */
 
-        //Toast.makeText(this,"Película agregada: ${prueba}",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"Película agregada: ${prueba}",Toast.LENGTH_SHORT).show()
 
         if (lista.isEmpty()){
             Toast.makeText(this,"No se fue posible cargar peliculas de firebase",Toast.LENGTH_SHORT).show()
