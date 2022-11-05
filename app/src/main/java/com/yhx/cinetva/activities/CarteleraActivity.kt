@@ -18,15 +18,22 @@ import kotlinx.android.synthetic.main.activity_cartelera.*
 class CarteleraActivity : AppCompatActivity() {
 
     //private val db = FirebaseFirestore.getInstance()
+    //val peliculas = db.collection("peliculas")
+    val db = Firebase.firestore
+    var name: String? = null
+    var lista = ArrayList<DataPelicula>()
+    val movie = mutableMapOf<Any, Any>()
+    val cinta = mutableListOf<String>()
+
+    //val movie = mutableListOf<String>()
+
 
 
     private fun peliculasPrueba():ArrayList<DataPelicula>{
 
-        //val peliculas = db.collection("peliculas")
-        val db = Firebase.firestore
-        val lista = ArrayList<DataPelicula>()
         var prueba = "NA"
-
+        //var movie = "hola"
+        //var pelicula = hashMapOf<String, String, String, String, String>()
 
         db.collection("peliculas")
             .get()
@@ -34,56 +41,49 @@ class CarteleraActivity : AppCompatActivity() {
                for(document in result){
                    //System.out.println("${document.id} => ${document.data.get("nombre")} -------${result}")
                    //lista.add(DataPelicula(document.id.toInt(),document.data.get("nombre").toString(),document.data.get("sinopsis").toString(),document.data.get("clasificacion").toString(),document.data.get("urlimagen").toString()))
-                   lista.add(DataPelicula(document.data.getValue("id").toString().toInt(),document.data.getValue("nombre").toString(),document.data.getValue("sinopsis").toString(),document.data.getValue("clasificacion").toString(),document.data.getValue("urlimagen").toString()))
+                   lista.add(
+                       DataPelicula(
+                           document.data.getValue("id").toString().toInt(),
+                           document.data.getValue("nombre").toString(),
+                           document.data.getValue("sinopsis").toString(),
+                           document.data.getValue("clasificacion").toString(),
+                           document.data.getValue("urlimagen").toString()
+
+                       )
+                   )
+                   name = document.data.getValue("nombre").toString()
+
+
+                   movie.put("id", document.data.getValue("id").toString().toInt())
+                   movie.put("nombre", document.data.getValue("nombre").toString())
+                   movie.put("sinopsis", document.data.getValue("sinopsis").toString())
+                   movie.put("clasificacion", document.data.getValue("clasificacion").toString())
+                   movie.put("urlimagen", document.data.getValue("urlimagen").toString())
+
+                   //cinta.add(name)
+
                    System.out.println(document.id)
                    System.out.println(document.data.get("nombre").toString())
                    System.out.println(document.data.get("sinopsis").toString())
                    System.out.println(document.data.get("clasificacion").toString())
                    System.out.println(document.data.get("urlimagen").toString())
 
-                   prueba += ","+document.data.get("nombre").toString()
-                   //Toast.makeText(this,"Película agregada: ${prueba}",Toast.LENGTH_SHORT).show()
                }
-               prueba+=result.size()
                //Toast.makeText(this,"Cantidad de Peliculas: ${result.size()} -prueba:${prueba}",Toast.LENGTH_SHORT).show()
 
 
            }
-
-
-        /*
-        db.collection("peliculas")
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    Log.d(TAG, "${document.id} => ${document.data}")
-                    //Toast.makeText(this, "${document.id} => ${document.data}",Toast.LENGTH_SHORT).show()
-                    //lista.add(DataPelicula(document.id.toInt(),document.data.get("nombre").toString(),document.data.get("sinopsis").toString(),document.data.get("clasificacion").toString(),document.data.get("urlimagen").toString()))
-                    //lista.add(DataPelicula(document.data.getValue("id").toString().toInt(),document.data.getValue("nombre").toString(),document.data.getValue("sinopsis").toString(),document.data.getValue("clasificacion").toString(),document.data.getValue("urlimagen").toString()))
-                    lista.add(DataPelicula(6,"Raya y el último dragón","El nuevo clásico animado de Disney, el primero desde 'Frozen 2'. Dirigida por Paul Briggs y Dean Wellins", "A", "https://i.blogs.es/28ca41/raya/1366_2000.jpeg"))
-                    //Toast.makeText(this, "${document.data}",Toast.LENGTH_SHORT).show()
-                    //Toast.makeText(this, document.data.getValue("nombre").toString(),Toast.LENGTH_SHORT).show()
-
-                    val pel = hashMapOf(
-                        "clasificacion" to document.data.getValue("clasificacion").toString(),
-                        "id" to document.data.getValue("id").toString(),
-                        "nombre" to document.data.getValue("nombre").toString(),
-                        "sinopsis" to document.data.getValue("sinopsis").toString(),
-                        "urlimagen" to document.data.getValue("urlimagen").toString())
-
-                    Toast.makeText(this, pel.toString(),Toast.LENGTH_SHORT).show()
-                }
-
-            }
             .addOnFailureListener { exception ->
                 Log.w(TAG, "Error getting documents.", exception)
                 Toast.makeText(this, "Error al leer",Toast.LENGTH_SHORT).show()
             }
-         */
+
+        Toast.makeText(this,"Movie name: ${movie}",Toast.LENGTH_SHORT).show()
 
         Toast.makeText(this,"Película agregada: ${prueba}",Toast.LENGTH_SHORT).show()
 
-        if (lista.isEmpty()){
+        //if (lista.isEmpty()){
+        if (name != null){
             Toast.makeText(this,"No se fue posible cargar peliculas de firebase",Toast.LENGTH_SHORT).show()
             lista.add(DataPelicula(6,"Raya y el último dragón","El nuevo clásico animado de Disney, el primero desde 'Frozen 2'. Dirigida por Paul Briggs y Dean Wellins", "A", "https://i.blogs.es/28ca41/raya/1366_2000.jpeg"))
             lista.add(DataPelicula(7,"The Many Saints of Newark","Precuela de 'Los Soprano', una de las series de televisión más aclamadas de todos los tiempos.", "C", "https://i.blogs.es/a8ffff/newark/1366_2000.jpeg"))

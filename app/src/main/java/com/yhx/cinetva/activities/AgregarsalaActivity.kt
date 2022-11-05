@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.yhx.cinetva.AppBarSecondary
 import com.yhx.cinetva.R
 import kotlinx.android.synthetic.main.activity_agregarfuncion.*
@@ -12,7 +14,8 @@ import kotlinx.android.synthetic.main.activity_agregarsala.*
 
 class AgregarsalaActivity : AppCompatActivity() {
 
-    private val db = FirebaseFirestore.getInstance()
+    //private val db = FirebaseFirestore.getInstance()
+    private val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +33,8 @@ class AgregarsalaActivity : AppCompatActivity() {
         val salaNo: String = etSalaNo.text.toString()
         val salaCapacidad:String = etSalaCapacidad.text.toString()
         val salaCategoria:String = etSalaCategoria.text.toString()
-        val salaOcupados = ""
-        val salaPelicula = ""
+        val salaOcupados = 0
+        val salaPelicula = 0
 
 
         if(salaNo != ""){

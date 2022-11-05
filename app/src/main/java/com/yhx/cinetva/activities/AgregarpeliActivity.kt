@@ -3,6 +3,9 @@ package com.yhx.cinetva.activities
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
@@ -16,7 +19,13 @@ import kotlinx.android.synthetic.main.activity_modificarpeli.*
 class AgregarpeliActivity : AppCompatActivity() {
 
     //private val db = FirebaseFirestore.getInstance()
-    val db = Firebase.firestore
+    private val db = Firebase.firestore
+    //val clasifPeliList = arrayOf("A", "B", "B12", "B15", "C")
+    //val spinner = findViewById<Spinner>(R.id.etFuncionIdPeli)
+    //val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, clasifPeliList)
+    //lateinit var option : Spinner
+    //lateinit var result : TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,20 +54,6 @@ class AgregarpeliActivity : AppCompatActivity() {
                 "nombre" to peliNombre,
                 "sinopsis" to peliSinopsis,
                 "urlimagen" to peliUrlImagen)
-
-            /*
-            //Agregar peliculas con ID automático
-            db.collection("peliculas")
-                .add(pelicula)
-                .addOnSuccessListener { documentReference ->
-                    Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-                    Toast.makeText(this,"Pelicula Agregada: ${documentReference.id}",Toast.LENGTH_SHORT).show()
-                }
-                .addOnFailureListener { e ->
-                    Log.w(TAG, "Error adding document", e)
-                    Toast.makeText(this, "Error: ${e}",Toast.LENGTH_SHORT).show()
-                }
-            */
 
             //Agregar peliculas con ID manual
             db.collection("peliculas").document(pelicula.getValue("id")).set(pelicula)

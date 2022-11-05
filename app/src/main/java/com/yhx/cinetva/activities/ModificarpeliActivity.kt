@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.yhx.cinetva.AppBarSecondary
 import com.yhx.cinetva.R
 import kotlinx.android.synthetic.main.activity_agregarpeli.*
@@ -11,7 +13,8 @@ import kotlinx.android.synthetic.main.activity_modificarpeli.*
 
 class ModificarpeliActivity : AppCompatActivity() {
 
-    private val db = FirebaseFirestore.getInstance()
+    //private val db = FirebaseFirestore.getInstance()
+    private val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
